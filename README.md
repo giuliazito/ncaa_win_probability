@@ -29,7 +29,7 @@ home_score_differential: A dynamic lead/deficit tracker calculated minute-by-min
 total_seconds_remaining: A unified countdown clock consolidating period, minute, and second data to allow the algorithm to accurately learn time-decay logic.
 
 ### 2. Strict Data Leakage Prevention
-To ensure model validity, the data was split by game_id using GroupShuffleSplit to ensure the appropriate information was captured in the datasets. Non predictive  or target leaking variables (such as game_id, home_name, away_name, and raw game_clock strings) were removed to prevent data leakage. The model remained entirely team-agnostic and evaluated pure mathematical game states.
+The data was split by game_id using GroupShuffleSplit to ensure the appropriate information was captured in the datasets. Non predictive  or target leaking variables (such as game_id, home_name, away_name, and raw game_clock strings) were removed to prevent data leakage. The model remained entirely team-agnostic and evaluated pure mathematical game states.
 
 ### 3. Algorithm Selection & Tuning
 A Logistic Regression baseline was established to capture obvious linear trends, achieving a strong initial AUC. Non-linear momentum shifts, such as dramatic late-game scoring run, the architecture was leveled up to an XGBoost classifier. Hyperparameters (max_depth=5, learning_rate=0.1) were explicitly tuned to prevent overfitting, mathematically validated by comparing Training AUC (0.8883) against Testing AUC (0.9038).
@@ -39,6 +39,7 @@ The optimized model was serialized and deployed into a live, interactive web app
 
 ## Visualizations
 feature_importance.png: Demonstrates the weighted gain of custom engineered features.
+
 
 espn_style_probability.png: A minute-by-minute timeline mapping score differential against dynamic win probability.
 
