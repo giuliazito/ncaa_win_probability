@@ -38,9 +38,12 @@ A Logistic Regression baseline was established to capture obvious linear trends,
 The optimized model was serialized and deployed into a live, interactive web application using Streamlit. The dashboard allows users to input hypothetical game scenarios via custom UI elements, instantly returning dynamic win-probability metrics and visual progress indicators.
 
 ## Visualizations
+**Feature Importance**
+![Feature Importance](feature_importance.png)
 feature_importance.png: Demonstrates the weighted gain of custom engineered features.
 
-
+**Live Win Probability Timeline**
+![ESPN Style Probability](espn_style_probability.png)
 espn_style_probability.png: A minute-by-minute timeline mapping score differential against dynamic win probability.
 
 ## How to Run Locally
